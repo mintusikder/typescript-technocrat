@@ -8,5 +8,5 @@ isLoggedIn = false;
 
 let x : undefined  = undefined 
 
-x = 4 
-x = "fore"
+// x = 4 
+// x = "fore"
