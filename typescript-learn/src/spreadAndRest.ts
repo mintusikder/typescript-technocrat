@@ -27,3 +27,13 @@ const updatedUser = {
 const mergedUser = { ...user, ...updatedUser };
 
 console.log(mergedUser);
+
+//rest operator
+
+const sendInvitation = (...friends: string[]) => {
+    friends.forEach((friend) => {
+        console.log(`Invitation sent to ${friend}`);
+    })
+}
+
+sendInvitation("Alice", "Bob", "Charlie","David");
