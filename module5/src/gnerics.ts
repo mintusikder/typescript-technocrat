@@ -2,7 +2,9 @@ type GenericArray<T> = Array<T>;
 const friends: GenericArray<string> = ["Alice", "Bob", "Charlie"];
 const numbers: GenericArray<number> = [1, 2, 3, 4, 5];
 
-const userList: GenericArray<{ name: string; age: number; email: string }> = [
+type User = { name: string; age: number; email: string }
+
+const userList: GenericArray<User> = [
   {
     name: "John Doe",
     age: 30,
