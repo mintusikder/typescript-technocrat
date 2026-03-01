@@ -1,34 +1,9 @@
-// const createArrayWithString = (value: string)=> [value];
-
-// const createArrayWithNumber = (value: number)=> [value];
-
-// const createArrayWithBoolean = (value: boolean)=> [value];
-
-// const arrayWithObject = (value: {id: number; name: string})=> {
-//     return [value];
-// }
-
-const createArrayWithGeneric = <T>(value: T): T[] => {
-  return [value];
+type Student = {
+  name: string;
+  age: number;
 };
 
-const stringArray = createArrayWithGeneric<string>("Hello");
-const numberArray = createArrayWithGeneric<number>(42);
-const booleanArray = createArrayWithGeneric<boolean>(true);
-const objectArray = createArrayWithGeneric<{ id: number; name: string }>({
-  id: 1,
-  name: "John Doe",
-});
-
-//tuple
-
-const createTupleWithGeneric = <T, U>(value1: T, value2: U): [T, U] => {
-  return [value1, value2];
-};
-
-const stringNumberTuple = createTupleWithGeneric<string, number>("Hello", 42);
-
-const addStudentCourse = <T>(studentInfo: T) => {
+const addStudentCourse = <T extends Student>(studentInfo: T) => {
   return {
     course: "TypeScript",
     ...studentInfo,
@@ -37,6 +12,6 @@ const addStudentCourse = <T>(studentInfo: T) => {
 
 const studen1 = addStudentCourse({ name: "Alice", age: 20 });
 const studen2 = addStudentCourse({ name: "Bob", age: 22, isCar: true });
+const studen3 = addStudentCourse({ name: "Charlie", age: 25, hasWatch: true });
 
-
-console.log(studen2);
+console.log(studen3);
